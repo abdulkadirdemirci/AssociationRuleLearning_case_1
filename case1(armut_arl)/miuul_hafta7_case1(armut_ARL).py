@@ -36,6 +36,7 @@ createdate  :Hizmetin satın alındığı tarih
 """
 #################################################
 
+
 #################################################
 # GÖREV 1 ADIM 1
 #todo: armut_data.csv dosyasını okutunuz.
