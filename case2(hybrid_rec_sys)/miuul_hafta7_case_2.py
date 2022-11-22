@@ -4,8 +4,6 @@
 ID'si verilen kullanıcı için item-based ve user-based recommender
 yöntemlerini kullanarak 10 film önerisi yapınız.
 """
-
-
 # veri seti hikayesi
 """
 Veri seti, bir film tavsiye hizmeti olan MovieLens tarafından sağlanmıştır. 
@@ -34,6 +32,7 @@ pd.set_option("display.max_columns",500)
 pd.set_option("display.max_rows",500)
 import warnings
 warnings.filterwarnings("ignore")
+
 ########################################################################################################################
 ############################################# USER BASED RECOMENDATION #################################################
 ########################################################################################################################
@@ -42,10 +41,10 @@ warnings.filterwarnings("ignore")
 # GÖREV 1 ADIM 1:
 #TODO: movie, rating veri setlerini okutunuz.
 ######################
-movie_ = pd.read_csv("datasets/movie.csv")
+movie_ = pd.read_csv("datasets/movie_lens_dataset/movie.csv")
 movie = movie_.copy()
 
-rating_ = pd.read_csv("datasets/rating.csv")
+rating_ = pd.read_csv("datasets/movie_lens_dataset/rating.csv")
 rating = rating_.copy()
 
 movie.shape
@@ -354,6 +353,5 @@ corr_df.index
 def get_movie_name(corr_df,num_of_rec):
     mov_id_list = corr_df.index[:num_of_rec].values
     return movie_title[movie_title["movieId"].isin(mov_id_list)]["title"]
-
 
 get_movie_name(corr_df,6)
